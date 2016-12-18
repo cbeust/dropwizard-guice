@@ -1,0 +1,32 @@
+<html>
+
+<body>
+<h1>List of videos</h1>
+<h2>Date: {{date}}</h2>
+    <table border="1">
+      <tr>
+        <th>Title</th>
+        <th>Year</th>
+      </tr>
+      {{#videos}}
+        <td>{{title}}</td>
+        <td>{{year}}</td>
+      </tr>
+      {{/videos}}
+    </table>
+</div>
+
+
+
+
+
+
+Contributors:
+<ul>
+  {{#contributors}}
+  <li>{{.}}</li>
+  {{/contributors}}
+</ul>
+
+</body>
+</html>

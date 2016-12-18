@@ -1,0 +1,25 @@
+<html>
+
+<body>
+<div id="app">
+  <h1>List of videos</h1>
+  <h2>Date: {{date}}</h2>
+
+  <table border="1">
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+    </tr>
+    <tr v-for="video in vs">
+      <td>{{video.title}}</td>
+      <td>{{video.year}}</td>
+    </tr>
+  </table>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/assets/js/video-list.js"></script>
+
+</body>
+</html>

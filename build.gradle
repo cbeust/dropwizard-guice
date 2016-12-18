@@ -1,0 +1,45 @@
+plugins {
+  id "com.github.johnrengelman.shadow" version "1.2.3"
+}
+apply plugin: "java"
+
+version = "1.0.0"
+
+jar {
+  manifest {
+    attributes(
+      "Main-Class": "com.leeco.video.MainApplication"
+    )
+  }
+}
+
+shadowJar {
+  mergeServiceFiles()
+}
+
+
+repositories {    
+    mavenCentral()
+}
+
+
+dependencies {
+    compile "io.dropwizard:dropwizard-core:1.0.5",
+            "io.dropwizard:dropwizard-views:1.0.5",
+            "io.dropwizard:dropwizard-views-mustache:1.0.5",
+            "io.dropwizard:dropwizard-assets:1.0.5",
+            "javax.inject:javax.inject:1",
+            "javax.ws.rs:javax.ws.rs-api:2.1-m01",
+            "com.hubspot.dropwizard:dropwizard-guice:1.0.0.2",
+            "com.squareup.retrofit2:retrofit:2.1.0",
+            "com.squareup.retrofit2:converter-gson:2.1.0",
+            "mysql:mysql-connector-java:6.0.5",
+            "org.hibernate:hibernate-core:5.2.5.Final",
+            "org.jooq:jooq-meta:3.8.3",
+            "org.jooq:jooq-codegen:3.8.3"
+
+    testCompile "junit:junit:4.11"
+}
+
+
+build.dependsOn shadowJar
