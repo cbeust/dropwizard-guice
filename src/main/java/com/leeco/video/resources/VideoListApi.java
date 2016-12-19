@@ -1,10 +1,8 @@
 package com.leeco.video.resources;
 
-import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
+import com.leeco.video.Db;
 import com.leeco.video.api.Video;
-import org.hibernate.Query;
-import org.hibernate.Session;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -19,14 +17,11 @@ import java.util.List;
 @Path("/v0/getVideos")
 public class VideoListApi {
     @Inject
-    private Session session;
+    private Db db;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Video> getVideos() {
-        session.beginTransaction();
-        List videos = session.createQuery("from videos").list();
-        session.close();
-        return videos;
+        return db.getVideos();
     }
 }
