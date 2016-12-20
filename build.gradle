@@ -13,6 +13,14 @@ jar {
   }
 }
 
+apply plugin: 'application'
+
+mainClassName = "com.leeco.video.MainApplication"
+
+run {
+    args += ["server", "src/main/yml/server.yml"]
+}
+
 shadowJar {
   mergeServiceFiles()
 }
