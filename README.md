@@ -1,3 +1,5 @@
+A sample DropWizard - Hibernate - Guice - vue.js project.
+
 To run:
 
 ```
