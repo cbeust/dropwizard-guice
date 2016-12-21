@@ -68,7 +68,7 @@ public class ServerModule implements Module {
         @Override
         public List<Video> getVideos() {
             return ImmutableList.of(
-                    new Video("Avatar (mock)", 2009)
+                    new Video("Avatar (really a mock)", 2009)
             );
         }
     }
